@@ -11,7 +11,7 @@ if __name__== "__main__":
     count = 0
     
     direntry_obj = os.scandir(sys.argv[1])
-    if mode == "0":
+    if mode == "0":  # .DESKTOP to .URL
         for entry in direntry_obj:
             if entry.is_file():
                 if entry.name.endswith(".desktop") or entry.name.endswith(".DESKTOP"):
@@ -26,7 +26,7 @@ if __name__== "__main__":
                     count += 1
                     f_from.close()
                     f_to.close()
-    elif mode == "1":
+    elif mode == "1":  # .URL to .DESKTOP
         for entry in direntry_obj:
             if entry.is_file():
                 if entry.name.endswith(".url") or entry.name.endswith(".URL"):
