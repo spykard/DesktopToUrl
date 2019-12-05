@@ -10,7 +10,7 @@ if __name__== "__main__":
     mode = input(".DESKTOP to .URL or .URL to .DESKTOP [0/1] ")
     count = 0
     
-    direntry_obj = os.scandir(sys.argv[1])
+    direntry_obj = os.scandir(" ".join(sys.argv[1:]))
     if mode == "0":  # .DESKTOP to .URL
         for entry in direntry_obj:
             if entry.is_file():
